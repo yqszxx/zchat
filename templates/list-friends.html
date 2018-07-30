@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}List user{% endblock %}
+
+{% block body %}
+    {% if friends %}
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Username</th><th>Chat</th><th>Delete</th>
+            </tr>
+        {% for friend in friends %}
+            <tr>
+                <td>{{ friend }}</td>
+                <td><a href="{{ url_for('chat_with', friend=friend) }}">Chat</a></td>
+                <td><a href="{{ url_for('del_friend', friend=friend) }}">Delete</a> </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No friends.</p>
+    {% endif %}
+    <a href="{{ url_for('add_friend') }}"><button type="button">Add friend</button></a>
+{% endblock %}

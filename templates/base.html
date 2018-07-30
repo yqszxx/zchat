@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TITLE{% endblock %} - ZChat</title>
+    {% block script %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+{% endblock %}
+<br>
+<a id="logout" href="{{ url_for('logout') }}"><button type="button">Logout</button></a>
+</body>
+</html>
